@@ -60,6 +60,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("awww-daemon")
 	hl.exec_cmd("awww img ~/Images/wallpaper1.jpg")
 	hl.exec_cmd("hypridle")
+	hl.exec_cmd("cursor-clip --daemon")
+	hl.exec_cmd("kdeconnect-indicator")
 end)
 -------------------------------
 ---- ENVIRONMENT VARIABLES ----
@@ -67,10 +69,11 @@ end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
 
-hl.env("XCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME", "/home/jorvik/.local/share/icons/Vimix-cursors-white")
-hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
+
+hl.env("HYPRCURSOR_THEME","Vimix-hypr")
+hl.env("HYPRCURSOR_SIZE", "24")
+
 
 
 -----------------------
@@ -264,8 +267,12 @@ hl.bind(secondMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(secondMod .. " + SPACE", hl.dsp.exec_cmd(launcher))
 hl.bind(secondMod .. " + F", hl.dsp.exec_cmd(browser))
 hl.bind(secondMod .. " + C", hl.dsp.exec_cmd("helium-browser"))
+hl.bind(secondMod .. " + D", hl.dsp.exec_cmd("ferdium"))
 hl.bind(secondMod .. " + N", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(runner))
+hl.bind(secondMod .. " + P", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("hyprpicker -a"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cursor-clip"))
 hl.bind(secondMod .. " + S", function()
 	hl.dispatch(hl.dsp.exec_cmd("spotify"))
 	hl.dispatch(hl.dsp.exec_cmd("kitty -e cava"))

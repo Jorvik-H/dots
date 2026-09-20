@@ -16,6 +16,7 @@ window#waybar.hidden {
 }
 
 /*
+ * 
 window#waybar.empty {
     background-color: transparent;
 }
@@ -60,12 +61,16 @@ button {
     color:#D699B6;
 }
 
+#workspaces button.visible {
+    color:#D699B6;
+}
+
 #workspaces button.focused, #workspaces button.active {
     color: #D699B6
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    color: #eb4d4b;
 }
 
 #workspaces {

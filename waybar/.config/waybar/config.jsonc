@@ -35,7 +35,7 @@
         "rotate": 0, 
         "format-muted": "0% x", 
         "tooltip-format": "{icon} {desc} {volume}%", 
-        "scroll-step": 2, 
+        "scroll-step": 0.5, 
         "format-icons": {
             "headphone": " ",
             "hands-free": " ",
