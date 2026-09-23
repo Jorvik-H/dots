@@ -58,7 +58,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("systemctl --usr start hyprpokitagent")
 	hl.exec_cmd("awww-daemon")
-	hl.exec_cmd("awww img ~/Images/wallpaper1.jpg")
+	hl.exec_cmd("awww img ~/images/wallpaper1.jpg")
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("cursor-clip --daemon")
 	hl.exec_cmd("kdeconnect-indicator")
@@ -271,6 +271,7 @@ hl.bind(secondMod .. " + D", hl.dsp.exec_cmd("ferdium"))
 hl.bind(secondMod .. " + N", hl.dsp.exec_cmd("obsidian"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(runner))
 hl.bind(secondMod .. " + P", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("pgrep hypridle && pkill hypridle && notify-send 'Hypridle deactivated' || hypridle"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("hyprpicker -a"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cursor-clip"))
 hl.bind(secondMod .. " + S", function()
@@ -280,9 +281,8 @@ end)
 
 --Nav functions
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + W + P", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + P + W", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + P", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(secondMod .. " + M", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(secondMod .. " + BACKSPACE", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.window.fullscreen({mode=fullscreen, action=toggle}))   
 
