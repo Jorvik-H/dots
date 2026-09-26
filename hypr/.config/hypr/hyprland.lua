@@ -100,10 +100,11 @@ hl.env("HYPRCURSOR_SIZE", "24")
 -----------------------
 
 -- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
+-- gaps in used to be 10 and out was 15 rounding used to be 5 with power 2
 hl.config({
     general = {
-        gaps_in  = 10,
-        gaps_out = 15,
+        gaps_in  = 3.5,
+        gaps_out = 7,
 
         border_size = 2,
 
@@ -122,8 +123,8 @@ hl.config({
     },
 
     decoration = {
-        rounding       =5,
-        rounding_power = 2,
+        rounding       =1,
+        rounding_power = 1,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
